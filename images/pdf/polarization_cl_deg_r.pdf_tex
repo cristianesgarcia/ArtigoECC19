@@ -1,0 +1,149 @@
+%% Creator: Inkscape inkscape 0.92.2, www.inkscape.org
+%% PDF/EPS/PS + LaTeX output extension by Johan Engelen, 2010
+%% Accompanies image file 'polarization_cl_deg_r.pdf' (pdf, eps, ps)
+%%
+%% To include the image in your LaTeX document, write
+%%   \input{<filename>.pdf_tex}
+%%  instead of
+%%   \includegraphics{<filename>.pdf}
+%% To scale the image, write
+%%   \def\svgwidth{<desired width>}
+%%   \input{<filename>.pdf_tex}
+%%  instead of
+%%   \includegraphics[width=<desired width>]{<filename>.pdf}
+%%
+%% Images with a different path to the parent latex file can
+%% be accessed with the `import' package (which may need to be
+%% installed) using
+%%   \usepackage{import}
+%% in the preamble, and then including the image with
+%%   \import{<path to file>}{<filename>.pdf_tex}
+%% Alternatively, one can specify
+%%   \graphicspath{{<path to file>/}}
+%% 
+%% For more information, please see info/svg-inkscape on CTAN:
+%%   http://tug.ctan.org/tex-archive/info/svg-inkscape
+%%
+\begingroup%
+  \makeatletter%
+  \providecommand\color[2][]{%
+    \errmessage{(Inkscape) Color is used for the text in Inkscape, but the package 'color.sty' is not loaded}%
+    \renewcommand\color[2][]{}%
+  }%
+  \providecommand\transparent[1]{%
+    \errmessage{(Inkscape) Transparency is used (non-zero) for the text in Inkscape, but the package 'transparent.sty' is not loaded}%
+    \renewcommand\transparent[1]{}%
+  }%
+  \providecommand\rotatebox[2]{#2}%
+  \ifx\svgwidth\undefined%
+    \setlength{\unitlength}{225bp}%
+    \ifx\svgscale\undefined%
+      \relax%
+    \else%
+      \setlength{\unitlength}{\unitlength * \real{\svgscale}}%
+    \fi%
+  \else%
+    \setlength{\unitlength}{\svgwidth}%
+  \fi%
+  \global\let\svgwidth\undefined%
+  \global\let\svgscale\undefined%
+  \makeatother%
+  \begin{picture}(1,0.7)%
+    \put(0,0){\includegraphics[width=\unitlength,page=1]{polarization_cl_deg_r.pdf}}%
+    \put(0.119,0.50333333){\makebox(0,0)[rb]{\smash{0.008}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=2]{polarization_cl_deg_r.pdf}}%
+    \put(0.119,0.579){\makebox(0,0)[rb]{\smash{0.012}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=3]{polarization_cl_deg_r.pdf}}%
+    \put(0.119,0.65466667){\makebox(0,0)[rb]{\smash{0.016}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=4]{polarization_cl_deg_r.pdf}}%
+    \put(0.14,0.45833333){\makebox(0,0)[b]{\smash{~}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=5]{polarization_cl_deg_r.pdf}}%
+    \put(0.20766667,0.45833333){\makebox(0,0)[b]{\smash{~}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=6]{polarization_cl_deg_r.pdf}}%
+    \put(0.27533333,0.45833333){\makebox(0,0)[b]{\smash{~}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=7]{polarization_cl_deg_r.pdf}}%
+    \put(0.34333333,0.45833333){\makebox(0,0)[b]{\smash{~}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=8]{polarization_cl_deg_r.pdf}}%
+    \put(0.411,0.45833333){\makebox(0,0)[b]{\smash{~}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=9]{polarization_cl_deg_r.pdf}}%
+    \put(0.47866667,0.45833333){\makebox(0,0)[b]{\smash{~}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=10]{polarization_cl_deg_r.pdf}}%
+    \put(0.54633333,0.45833333){\makebox(0,0)[b]{\smash{~}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=11]{polarization_cl_deg_r.pdf}}%
+    \put(0.61433333,0.45833333){\makebox(0,0)[b]{\smash{~}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=12]{polarization_cl_deg_r.pdf}}%
+    \put(0.682,0.45833333){\makebox(0,0)[b]{\smash{~}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=13]{polarization_cl_deg_r.pdf}}%
+    \put(0.74966667,0.45833333){\makebox(0,0)[b]{\smash{~}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=14]{polarization_cl_deg_r.pdf}}%
+    \put(0.031,0.589){\rotatebox{90}{\makebox(0,0)[b]{\smash{$K_i$}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=15]{polarization_cl_deg_r.pdf}}%
+    \put(0.91433333,0.632){\makebox(0,0)[rb]{\smash{Proposed}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=16]{polarization_cl_deg_r.pdf}}%
+    \put(0.91433333,0.587){\makebox(0,0)[rb]{\smash{Cond}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=17]{polarization_cl_deg_r.pdf}}%
+    \put(0.91433333,0.542){\makebox(0,0)[rb]{\smash{Sing. Val.}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=18]{polarization_cl_deg_r.pdf}}%
+    \put(0.91433333,0.497){\makebox(0,0)[rb]{\smash{Ideal}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=19]{polarization_cl_deg_r.pdf}}%
+    \put(0.91433333,0.452){\makebox(0,0)[rb]{\smash{Means}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=20]{polarization_cl_deg_r.pdf}}%
+    \put(0.119,0.31666667){\makebox(0,0)[rb]{\smash{0.008}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=21]{polarization_cl_deg_r.pdf}}%
+    \put(0.119,0.39233333){\makebox(0,0)[rb]{\smash{0.012}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=22]{polarization_cl_deg_r.pdf}}%
+    \put(0.119,0.468){\makebox(0,0)[rb]{\smash{0.016}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=23]{polarization_cl_deg_r.pdf}}%
+    \put(0.14,0.27166667){\makebox(0,0)[b]{\smash{~}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=24]{polarization_cl_deg_r.pdf}}%
+    \put(0.20766667,0.27166667){\makebox(0,0)[b]{\smash{~}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=25]{polarization_cl_deg_r.pdf}}%
+    \put(0.27533333,0.27166667){\makebox(0,0)[b]{\smash{~}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=26]{polarization_cl_deg_r.pdf}}%
+    \put(0.34333333,0.27166667){\makebox(0,0)[b]{\smash{~}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=27]{polarization_cl_deg_r.pdf}}%
+    \put(0.411,0.27166667){\makebox(0,0)[b]{\smash{~}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=28]{polarization_cl_deg_r.pdf}}%
+    \put(0.47866667,0.27166667){\makebox(0,0)[b]{\smash{~}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=29]{polarization_cl_deg_r.pdf}}%
+    \put(0.54633333,0.27166667){\makebox(0,0)[b]{\smash{~}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=30]{polarization_cl_deg_r.pdf}}%
+    \put(0.61433333,0.27166667){\makebox(0,0)[b]{\smash{~}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=31]{polarization_cl_deg_r.pdf}}%
+    \put(0.682,0.27166667){\makebox(0,0)[b]{\smash{~}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=32]{polarization_cl_deg_r.pdf}}%
+    \put(0.74966667,0.27166667){\makebox(0,0)[b]{\smash{~}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=33]{polarization_cl_deg_r.pdf}}%
+    \put(0.031,0.40233333){\rotatebox{90}{\makebox(0,0)[b]{\smash{$K_i$}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=34]{polarization_cl_deg_r.pdf}}%
+    \put(0.119,0.145){\makebox(0,0)[rb]{\smash{-0.04}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=35]{polarization_cl_deg_r.pdf}}%
+    \put(0.119,0.20566667){\makebox(0,0)[rb]{\smash{0}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=36]{polarization_cl_deg_r.pdf}}%
+    \put(0.119,0.26633333){\makebox(0,0)[rb]{\smash{0.04}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=37]{polarization_cl_deg_r.pdf}}%
+    \put(0.14,0.085){\makebox(0,0)[b]{\smash{-0.02}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=38]{polarization_cl_deg_r.pdf}}%
+    \put(0.20766667,0.085){\makebox(0,0)[b]{\smash{0}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=39]{polarization_cl_deg_r.pdf}}%
+    \put(0.27533333,0.085){\makebox(0,0)[b]{\smash{0.02}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=40]{polarization_cl_deg_r.pdf}}%
+    \put(0.34333333,0.085){\makebox(0,0)[b]{\smash{0.04}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=41]{polarization_cl_deg_r.pdf}}%
+    \put(0.411,0.085){\makebox(0,0)[b]{\smash{0.06}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=42]{polarization_cl_deg_r.pdf}}%
+    \put(0.47866667,0.085){\makebox(0,0)[b]{\smash{0.08}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=43]{polarization_cl_deg_r.pdf}}%
+    \put(0.54633333,0.085){\makebox(0,0)[b]{\smash{0.1}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=44]{polarization_cl_deg_r.pdf}}%
+    \put(0.61433333,0.085){\makebox(0,0)[b]{\smash{0.12}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=45]{polarization_cl_deg_r.pdf}}%
+    \put(0.682,0.085){\makebox(0,0)[b]{\smash{0.14}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=46]{polarization_cl_deg_r.pdf}}%
+    \put(0.74966667,0.085){\makebox(0,0)[b]{\smash{0.16}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=47]{polarization_cl_deg_r.pdf}}%
+    \put(0.031,0.21566667){\rotatebox{90}{\makebox(0,0)[b]{\smash{$K_i$}}}}%
+    \put(0.44466667,0.04){\makebox(0,0)[b]{\smash{$K_p$}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=48]{polarization_cl_deg_r.pdf}}%
+  \end{picture}%
+\endgroup%

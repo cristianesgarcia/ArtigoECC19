@@ -1,0 +1,67 @@
+
+\section{\label{sec:application} Application of the methods to the controller parameters estimation problem}
+
+\subsection{Smallest singular value method}
+The application of this method to the controller parameters estimation problem can be justified by the fact that in the eigenparameter space the bias and variance of the estimated parameters $\hat{\rho}_{V}\tran(N)$ of the proposed problem behave as described in \cite{carrette1996discarding}.
+To elucidate this fact 200 Monte Carlo experiments were performed in an open loop experiment with a step as system input.
+The parameters were estimated increasing the number of samples with the VRFT method.
+The bias and variance of the eigenparameters were calculated and are presented in \autoref{fig:bias_var_ol_val}.
+\begin{figure}[h!]
+  \centering
+  \def\svgwidth{\columnwidth}
+  {\footnotesize\import{images/pdf/}{bias_var_ol_val.pdf_tex}}
+  \caption{\label{fig:bias_var_ol_val} Bias and variance of $\hat{\rho}_{V1}(N)$ solid line and $\hat{\rho}_{V2}(N)$ dashed line.}
+\end{figure}
+
+It is possible to see that the bias of the eigenparameter related to the smallest singular value $\hat{\rho}_{V2}(N)$ suffers the most with time, while the bias of $\hat{\rho}_{V1}(N)$ is approximately constant and close to zero.
+Whereas, the variance of the two parameters decreases with the number of samples.
+
+
+In order to apply this technique to the parameters estimation problem and to allow a comparison between the methods, the following adjustment was made:
+the smallest singular value method was applied to the regressor matrix $\Phi(t)$ defined in \eqref{eq:reg_mat_vrft} formed by the VRFT regressor vectors defined in \eqref{eq:reg_vector_vrft} as
+\[
+  \underline{\sigma}^2(\Phi(t)) - \underline{\sigma}^2(\Phi(t-1)) < \eta_c
+\]
+The informative subset is delimited while the inequality is not satisfied, this way, after the inequality be satisfied all remaining data is discarded.
+That means that the regressor vectors are not concatenated.
+
+
+% \begin{enumerate}
+%   \item The method is used to determine the informative data subset
+% 	\item The method is used to determinate the informative subset of data to be used in the estimation of the parameters.
+%   To accomplish that, the smallest singular value method was applied to the regressor matrix $\Phi(t)$ defined in \eqref{eq:reg_mat_vrft} formed by the VRFT regressor vectors defined in \eqref{eq:reg_vector_vrft} as
+%   \[
+%     \underline{\sigma}^2(\Phi(t)) - \underline{\sigma}^2(\Phi(t-1)) < \eta_c
+%   \]
+%   The informative subset is delimited while the inequality is not satisfied, this way, after the inequality be satisfied all remaining data is discarded.
+	% \item The threshold $\eta_c$ is obtained as $\eta_c = k \,\ \eta_{min}$
+	% where, $k$ is a constant term determined to give the better results and $\eta_{min}$ is the smallest slope of the graph of $\underline{\sigma}^2(N)$.
+% \end{enumerate}
+
+
+
+\subsection{Application of the condition number method to the addressed problem}
+In order to apply this method to the parameters estimation problem the condition number method was applied to the VRFT information matrix $P_N$ in \eqref{eq:inf_mat_vrft} as
+\[
+  \gamma(t) = \frac{\underline{\sigma}(P_N)}{\overline{\sigma}(P_N)} > \eta_n
+\]
+The informative subset is defined while the inequality is satisfied, thus, the remaining data is discarded when the inequality is no longer satisfied.
+
+\subsection{Another proposed approach}
+
+The proposed approach was derived from graphical analysis of the reciprocal condition number $\gamma(t)$ and the cost function $J_y(N)$ defined in \eqref{eq:jy}.
+% The information matrix used is from the VRFT method and the controller's parameters are estimated also using this method.
+In a simple way, the method searches for a good number of samples $t_f$ to truncate the data
+\begin{equation}
+	t_f = \arg \min_t \delta(t) \triangleq \gamma(t) - \hat{\gamma}(t)
+\label{eq:proposed_method}
+\end{equation}
+where, $\hat{\gamma}(t)$ is a polynomial approximation of $\gamma(t)$.
+Here, a sixth order polynomial was used to estimate $\hat{\gamma}(t)$.
+This choice was made because that was the order that better adjusted $\hat{\gamma}(t)$ to $\gamma(t)$.
+
+In other words, the goal is to find the index of the sample where the data deviates the most from the fitted curve towards bellow.
+In general, the sample where the minimum of $\delta(t)$ occurs corresponds to a point in the valley around the minimum of $\jy$.
+
+It is important to notice that one should ignore the first $n_\gamma$ samples before looking for the minimum.
+Here, $n_\gamma$ is a design parameter that accounts for the initial low correlation between $\gamma(t)$ and the closed loop performance.

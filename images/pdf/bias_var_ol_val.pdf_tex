@@ -1,0 +1,127 @@
+%% Creator: Inkscape inkscape 0.92.2, www.inkscape.org
+%% PDF/EPS/PS + LaTeX output extension by Johan Engelen, 2010
+%% Accompanies image file 'bias_var_ol_val.pdf' (pdf, eps, ps)
+%%
+%% To include the image in your LaTeX document, write
+%%   \input{<filename>.pdf_tex}
+%%  instead of
+%%   \includegraphics{<filename>.pdf}
+%% To scale the image, write
+%%   \def\svgwidth{<desired width>}
+%%   \input{<filename>.pdf_tex}
+%%  instead of
+%%   \includegraphics[width=<desired width>]{<filename>.pdf}
+%%
+%% Images with a different path to the parent latex file can
+%% be accessed with the `import' package (which may need to be
+%% installed) using
+%%   \usepackage{import}
+%% in the preamble, and then including the image with
+%%   \import{<path to file>}{<filename>.pdf_tex}
+%% Alternatively, one can specify
+%%   \graphicspath{{<path to file>/}}
+%% 
+%% For more information, please see info/svg-inkscape on CTAN:
+%%   http://tug.ctan.org/tex-archive/info/svg-inkscape
+%%
+\begingroup%
+  \makeatletter%
+  \providecommand\color[2][]{%
+    \errmessage{(Inkscape) Color is used for the text in Inkscape, but the package 'color.sty' is not loaded}%
+    \renewcommand\color[2][]{}%
+  }%
+  \providecommand\transparent[1]{%
+    \errmessage{(Inkscape) Transparency is used (non-zero) for the text in Inkscape, but the package 'transparent.sty' is not loaded}%
+    \renewcommand\transparent[1]{}%
+  }%
+  \providecommand\rotatebox[2]{#2}%
+  \ifx\svgwidth\undefined%
+    \setlength{\unitlength}{225bp}%
+    \ifx\svgscale\undefined%
+      \relax%
+    \else%
+      \setlength{\unitlength}{\unitlength * \real{\svgscale}}%
+    \fi%
+  \else%
+    \setlength{\unitlength}{\svgwidth}%
+  \fi%
+  \global\let\svgwidth\undefined%
+  \global\let\svgscale\undefined%
+  \makeatother%
+  \begin{picture}(1,0.7)%
+    \put(0,0){\includegraphics[width=\unitlength,page=1]{bias_var_ol_val.pdf}}%
+    \put(0.099,0.417){\makebox(0,0)[rb]{\smash{-30}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=2]{bias_var_ol_val.pdf}}%
+    \put(0.099,0.48){\makebox(0,0)[rb]{\smash{-20}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=3]{bias_var_ol_val.pdf}}%
+    \put(0.099,0.543){\makebox(0,0)[rb]{\smash{-10}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=4]{bias_var_ol_val.pdf}}%
+    \put(0.099,0.60566667){\makebox(0,0)[rb]{\smash{0}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=5]{bias_var_ol_val.pdf}}%
+    \put(0.099,0.66866667){\makebox(0,0)[rb]{\smash{10}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=6]{bias_var_ol_val.pdf}}%
+    \put(0.12,0.372){\makebox(0,0)[b]{\smash{~}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=7]{bias_var_ol_val.pdf}}%
+    \put(0.208,0.372){\makebox(0,0)[b]{\smash{~}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=8]{bias_var_ol_val.pdf}}%
+    \put(0.296,0.372){\makebox(0,0)[b]{\smash{~}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=9]{bias_var_ol_val.pdf}}%
+    \put(0.384,0.372){\makebox(0,0)[b]{\smash{~}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=10]{bias_var_ol_val.pdf}}%
+    \put(0.472,0.372){\makebox(0,0)[b]{\smash{~}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=11]{bias_var_ol_val.pdf}}%
+    \put(0.56,0.372){\makebox(0,0)[b]{\smash{~}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=12]{bias_var_ol_val.pdf}}%
+    \put(0.64766667,0.372){\makebox(0,0)[b]{\smash{~}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=13]{bias_var_ol_val.pdf}}%
+    \put(0.73566667,0.372){\makebox(0,0)[b]{\smash{~}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=14]{bias_var_ol_val.pdf}}%
+    \put(0.82366667,0.372){\makebox(0,0)[b]{\smash{~}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=15]{bias_var_ol_val.pdf}}%
+    \put(0.91166667,0.372){\makebox(0,0)[b]{\smash{~}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=16]{bias_var_ol_val.pdf}}%
+    \put(0.99966667,0.372){\makebox(0,0)[b]{\smash{~}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=17]{bias_var_ol_val.pdf}}%
+    \put(0.04266667,0.55266667){\rotatebox{90}{\makebox(0,0)[b]{\smash{Bias}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=18]{bias_var_ol_val.pdf}}%
+    \put(0.89333333,0.62366667){\makebox(0,0)[rb]{\smash{$\hat{\rho}_{V1}(N)$}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=19]{bias_var_ol_val.pdf}}%
+    \put(0.89333333,0.57866667){\makebox(0,0)[rb]{\smash{$\hat{\rho}_{V2}(N)$}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=20]{bias_var_ol_val.pdf}}%
+    \put(0.099,0.109){\makebox(0,0)[rb]{\smash{0}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=21]{bias_var_ol_val.pdf}}%
+    \put(0.099,0.235){\makebox(0,0)[rb]{\smash{0.5}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=22]{bias_var_ol_val.pdf}}%
+    \put(0.099,0.36066667){\makebox(0,0)[rb]{\smash{1}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=23]{bias_var_ol_val.pdf}}%
+    \put(0.12,0.064){\makebox(0,0)[b]{\smash{0}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=24]{bias_var_ol_val.pdf}}%
+    \put(0.208,0.064){\makebox(0,0)[b]{\smash{20}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=25]{bias_var_ol_val.pdf}}%
+    \put(0.296,0.064){\makebox(0,0)[b]{\smash{40}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=26]{bias_var_ol_val.pdf}}%
+    \put(0.384,0.064){\makebox(0,0)[b]{\smash{60}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=27]{bias_var_ol_val.pdf}}%
+    \put(0.472,0.064){\makebox(0,0)[b]{\smash{80}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=28]{bias_var_ol_val.pdf}}%
+    \put(0.56,0.064){\makebox(0,0)[b]{\smash{100}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=29]{bias_var_ol_val.pdf}}%
+    \put(0.64766667,0.064){\makebox(0,0)[b]{\smash{120}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=30]{bias_var_ol_val.pdf}}%
+    \put(0.73566667,0.064){\makebox(0,0)[b]{\smash{140}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=31]{bias_var_ol_val.pdf}}%
+    \put(0.82366667,0.064){\makebox(0,0)[b]{\smash{160}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=32]{bias_var_ol_val.pdf}}%
+    \put(0.91166667,0.064){\makebox(0,0)[b]{\smash{180}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=33]{bias_var_ol_val.pdf}}%
+    \put(0.99966667,0.064){\makebox(0,0)[b]{\smash{200}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=34]{bias_var_ol_val.pdf}}%
+    \put(0.04266667,0.24466667){\rotatebox{90}{\makebox(0,0)[b]{\smash{Variance}}}}%
+    \put(0.55966667,0.019){\makebox(0,0)[b]{\smash{Sample, $t$}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=35]{bias_var_ol_val.pdf}}%
+    \put(0.89333333,0.27066667){\makebox(0,0)[rb]{\smash{$\hat{\rho}_{V1}(N)$}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=36]{bias_var_ol_val.pdf}}%
+    \put(0.89333333,0.31566667){\makebox(0,0)[rb]{\smash{$\hat{\rho}_{V2}(N)$}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=37]{bias_var_ol_val.pdf}}%
+  \end{picture}%
+\endgroup%

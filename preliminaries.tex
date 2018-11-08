@@ -1,0 +1,208 @@
+
+% !TeX root = root.tex
+% !TeX spellcheck = en_US
+
+\section{\label{sec:preliminaries} PRELIMINARIES}
+
+\subsection{Smallest singular value approach}
+
+The aim of this section is to provide a brief explanation of the data discarding criterion developed in \cite{carrette1996discarding}.
+In that work, all the theoretical formulation was designed considering that: the system is single-input single-output (SISO) and stable, all data is from open loop simulations, and the experiment input comprises only a few step changes and long dwell times.
+
+The system to be modeled is an auto-regressive with exogenous input (ARX), and its output $y$ and output predictor $\hat{y}(\theta)$ are given in vector form as
+\begin{align}
+	y &= \Phi\theta_0 + \epsilon \label{eq:system_vec}\\
+	\hat{y}(\theta) &= \Phi\theta \label{eq:predic_output_vec}
+\end{align}
+where, $y = [y(1), \dots, y(N)]\tran$ is the system output vector,  $\theta_0 \in \mathcal{R}^{n_p}$ is the true parameters vector, and $\epsilon = [\epsilon(1), \dots, \epsilon(N)]\tran$ is the model error. %, and $\mu = [\mu(1), \dots, \mu(N)]\tran$ is the unmodeled noise vector.
+Whereas, $\hat{y}(\theta)$ is the predicted output vector for any parameter vector $\theta$, and $\Phi = [\phi(1), \dots, \phi(N)]\tran \in \mathcal{R}^{N \times n_p}$ is the regressor matrix, where the regressor vector is given by
+\begin{align*}
+	\phi(t) = \left[ -y(t-1), \dots, -y(t-n_a), u(t-1), \dots, u(t-n_b) \right] \tran.
+\end{align*}
+
+The parameters are estimated through the standard least squares prediction error criterion given by
+\[
+	\hat{\theta}(N) \triangleq \arg \min_{\theta \in \mathcal{R}^{n_p}} J(\theta, N) = \frac{\norm{\varepsilon(\theta)}_2^2}{2N} = \frac{\norm{y-\hat{y}(\theta)}_2^2}{2N}
+\]
+where, $\varepsilon(\theta)$ is the prediction error in vector form and $\norm{\cdot}_2$ is the Euclidean norm.
+
+The solution for this problem can be written using the pseudo-inverse $\Phi^\dagger $ of the regressor matrix $\Phi$ as
+$	\hat{\theta} = \Phi^\dagger y $.
+Therefore, applying the singular value decomposition technique in $\Phi$ one can get
+\[
+	\Phi = U \Sigma V\tran
+\]
+where, $\Sigma \in \mathcal{R}^{n_p\times n_p}$  is the singular value matrix formed by $\Sigma = \text{diag}(\sigma_1, \dots, \sigma_{n_p})$, and $\sigma_i^2 = \lambda_i(\Phi\tran \Phi) > 0$ for $i=1, \dots, n_p$.
+The matrices $U$ and $V$ are orthogonal matrices, $U$ is the left singular matrix of $\Phi$ and $V$ is the right singular matrix of $\Phi$.
+
+Roughly speaking, the SVD technique was used to make a similarity transformation, that is, to lead the $\hat{\theta}$ parameters vector to the eigenparameters space through $\hat{\theta}_V = V\tran \theta$.
+Using the eigenparameters representation and based on the excitation assumption that $\sigma^2 \ll \sigma_i^2, \,\ i = 1, \dots, n_p $, that is, each eigensubspace energy $\sigma_i^2$ is much larger than the system noise power $\sigma^2$, it was shown that:
+\begin{itemize}
+	\item Each eigensubspace energy $\sigma_i^2$ is composed by a term due to the input excitation in that eigensubspace and by a term proportional to the noise energy and the number of samples.
+	This way, if the increase of $\sigma_i^2$ is small it may be because it is affected only by the noise energy term, and because this term only grows with time it can deteriorate the parameters estimation.
+	\item The mean of the eigenparameters $\hat{\theta}_{Vi}$, where $i$ represents the $i$-th component of $\hat{\theta}_V$, are nearly independent of each other. Although, some correlation between them exists due to the unmodeled noise.
+	\item The bias of $\hat{\theta}_{Vi}$ may increase with the number of samples used if the input energy on that eigensubspace is not significant.
+	\item In general, the variance of $\hat{\theta}_{Vi}$ decreases as the number of samples is increased.
+	\item When there is a singular value that is significantly smaller then the others $\sigma_{i_{min}} \ll \sigma_i$, $i_{min} \neq i$, the eigenparameter $\hat{\theta}_{Vi_{min}}$ is the most affected by bias and variance.
+\end{itemize}
+
+As $\hat{\theta}_{Vi_{min}}$ is the most poorly estimated eigenparameter and it influences in the accuracy of the actual parameters, once the eigenparameters $\hat{\theta}_V$ lead to the actual parameters $\hat{\theta}$ through an orthogonal transformation, it is reasonable to only consider the time variations of $\sigma_{i_{min}}$.
+This way, the discarding criterion is defined as
+\begin{equation}
+	\underline{\sigma}^2(N) - \underline{\sigma}^2(N-1) < \eta_c
+\label{eq:smallest_sing_value}
+\end{equation}
+where, $\underline{\sigma}$ is the smallest singular value of the regressor matrix $\Phi$, $N$ is the number of samples and $\eta_c$ is a suitable threshold.
+Therefore, the regressor is discarded if the inequality is satisfied.
+The value of $\eta_c$ may be chosen as a few orders of magnitude greater than the smallest slope of the graph of $\underline{\sigma}^2(N)$.
+
+
+
+
+\subsection{Condition number approach}
+The second approach is presented in \cite{bittencourt2015algorithm} and a brief explanation of the method is given bellow.
+In this case, the following assumptions are made: the system is SISO, the system can be well described with a linear model, and it is assumed that the input signal is driven by a sequence of steps with dwell times.
+
+
+In that work, the parameters vector is estimated through the Recursive Least Squares (RLS) method given by
+\begin{align*}
+	\hat{\theta}_t &= \hat{\theta}_{t-1} + \bar{R}^{-1}(t)\phi(t)\varepsilon(t, \hat{\theta}_{t-1}) \\
+	\bar{R}(t) &= \lambda\bar{R}(t-1) + \phi(t)\phi\tran(t) %\\
+	% V_t(\hat{\theta}_t) &= \lambda V_{t-1}(\hat{\theta}_{t-1}) + \varepsilon(t, \hat{\theta}_{t-1})\varepsilon\tran(t, \hat{\theta}_{t})
+\end{align*}
+where, $\varepsilon(t, \hat{\theta}_{t-1})$ is the prediction error, $\phi(t)$ is the regressor vector, $\bar{R}(t)$ is the information matrix, and $\lambda$ is a weighting factor with $0<\lambda<1$.
+In a simple way, the algorithm can be defined through the following steps:
+
+\textbf{Search for any input step change:} First, look for steps in the input signal.
+This way, each identified change in the input and output signals generates a data sequence.
+A search for an informative subset occurs within each data sequence, which is the next step.
+
+\textbf{Condition number test:} In this test, the reciprocal condition number of the information matrix $\bar{R}(t)$ is calculated increasing the number of samples and it is tested through a threshold as
+\begin{equation}
+	\gamma(t) = \frac{\underline{\sigma}(t)}{\overline{\sigma}(t)} > \eta_n
+\label{eq:cond_number}
+\end{equation}
+where, $\underline{\sigma}$ is the smallest singular value, $\overline{\sigma}$ is the biggest singular value of $\bar{R}(t)$, and $\eta_n$ is an appropriate threshold.
+Each data subset comprises one sequence truncated as soon as the above condition stops being true.
+
+\textbf{Data quality: } The last test estimates how much the input and output signals are correlated, and uses it as a quality indicator for the data subset.
+Because this test was not used in the current work, it is not presented here.
+An explanation of this step can be found in \cite{bittencourt2015algorithm}.
+If a data sequence is able to pass through all tests the subset is marked as useful.
+
+% \subsection{Proposed approach}
+%
+% The proposed approach was derived from graphical analysis of the reciprocal condition number $\gamma(t)$ and the cost function $J_y(N)$ defined in \eqref{eq:jy}.
+% % The information matrix used is from the VRFT method and the controller's parameters are estimated also using this method.
+% In a simple way, the method searches for a good number of samples $t_f$ to truncate the data
+% \begin{equation}
+% 	t_f = \arg \min_t \delta(t) \triangleq \gamma(t) - \hat{\gamma}(t)
+% \label{eq:proposed_method}
+% \end{equation}
+% where, $\hat{\gamma}(t)$ is a polynomial approximation of $\gamma(t)$.
+%
+% In other words, the goal is to find the index of the sample where the data deviates the most from the fitted curve towards bellow.
+% In general, the sample where the minimum of $\delta(t)$ occurs corresponds to a point in the valley around the minimum of $J_y(t)$.
+%
+% An illustrative example is shown in \autoref{fig:exp1}.
+% \begin{figure}[h!]
+%   \centering
+%   \def\svgwidth{\columnwidth}
+%   {\footnotesize\import{images/pdf/}{exp1.pdf_tex}}
+%   \caption{\label{fig:exp1} Correlation between $J_y(t)$ and $\delta(t)$.}
+% \end{figure}
+% The data came from 500 Monte Carlo simulations of a second order system operating in open loop.
+% A step was applied as input to the system and the output was affected by a colored noise.
+% The parameters were calculate while increasing the number of samples for each realization.
+% It is possible to see from \autoref{fig:exp1} that there is a positive correlation between $J_y(t)$ and $\delta(t)$, so reducing $\delta(t)$ also reduces $J_y(t)$.
+%
+%
+% It is important to notice that one should ignore the first $n_\gamma$ samples before looking for the minimum.
+% Here, $n_\gamma$ is a design parameter that accounts for the initial low correlation between $\gamma(t)$ and the closed loop performance.
+
+
+\subsection{\label{sub:vrft} VRFT method}
+The VRFT is a non-iterative data driven method, that is, in the ideal case the parameters can be estimated using the data collected from a single experiment.
+In the ideal case, the following considerations are made: the controller is linearly parametrized, the ideal controller belongs to the controller class, and the system is not affected by noise \cite{bazanella2011data}.
+
+Thus, the linearly parametrized controller can be described as $ C(q, \rho) = \rho\tran \bar{C}(q)$
+where, $\rho$ is the parameters vector, $\bar{C}(q)$ is a vector representing the controller class, and $C(q, \rho)$ is the controller transfer function.
+
+The method's goal is to solve the following problem
+\begin{equation}
+	\underset{\rho}{\text{min }} J_y(\rho) \triangleq \bar{E} \left[ y(t, \rho) - y_d(t)  \right]^2
+\label{eq:cost_jy}
+\end{equation}
+where $J_y(\rho)$ is the reference performance criterion to be minimized.
+Whereas, $y(t, \rho) = C(q, \rho) r(t)$ is the closed loop process output signal, and $y_d(t) = T_d(q)r(t)$ is the desired output, where $T_d(q)$ is the reference model.
+
+The VRFT method transforms the problem of minimizing a cost function $J_y(\rho)$ into a prediction error identification of the controller $C(q, \rho)$, which consists in minimize $\jvr$.
+The cost function $\jvr$ is defined as
+\[
+	\jvr = \bar{E} \left[ u(t) - \rho\tran \varphi(t) \right]^2
+\]
+where the regressor vector $\varphi(t)$ is given by
+\begin{equation}
+	\varphi(t) = \bar{C}(q)\bar{e}(t) = \bar{C}(q) \left( T_d\inv(q) -1 \right)y(t)
+\label{eq:reg_vector_vrft}
+\end{equation}
+
+In this case, the regressor matrix is defined as
+\begin{equation}
+	\Phi(t) = \left[ \varphi(1), \ldots, \varphi(N) \right]\tran
+\label{eq:reg_mat_vrft}
+\end{equation}
+
+Therefore, the controller's parameters $\hat{\rho}$ can be estimated by minimizing the squares of the difference between $\hat{\rho}\tran \varphi(t)$ and $u(t)$ solving the following normal equation
+\begin{equation}
+	\hat{\rho}(N) = \left[ \sum \limits_{k=1}^N \varphi(t) \varphi\tran(t) \right]\inv \left[\sum \limits_{k=1}^N \varphi(t) u(t) \right] \label{eq:rho_idealcase}
+\end{equation}
+where, $N$ is the number of samples collected in the experiment, and $\hat{\rho}(N)$ is the parameters vector estimated up to the $N$-th sample.
+Now, it is possible to define the information matrix $P_N$ as
+\begin{equation}
+	P_N = \left[ \sum \limits_{k=1}^N \varphi(t) \varphi\tran(t) \right]
+\label{eq:inf_mat_vrft}
+\end{equation}
+
+When the assumption that the ideal controller belongs to the controller class is no longer guaranteed, also known as mismatched case, the regressor vector $\varphi(t)$ and the input signal $u(t)$ are filtered by a filter defined as $L(\ejw) = T_d(\ejw) \left( 1- T_d(\ejw) \right)$.
+This filter is applied to make the minimum of the cost functions close to each other.
+A more detailed explanation about the approaches of the VRFT to deal with the mismatched case, the noise case, and other approaches can be found in \cite{bazanella2011data}.
+
+In the sequel of this work an estimation for the cost function \eqref{eq:cost_jy} will be used.
+This estimation $\jy$ is defined as
+\begin{equation}
+	\jy = \frac{1}{N_e} \sum \limits_{t=1}^{N_e} \left( y(t, \hat{\rho}(N)) - y_d(t) \right)^2
+\label{eq:jy}
+\end{equation}
+where, $N_e$ is the number of samples to calculate the cost function, $y_d(t)$ is the desired output, and $y(t, \hat{\rho}(N))$ is the obtained output with the controller gains $\hat{\rho}(N)$ estimated until the sample $N$, where $N$ is increased one sample at a time.
+
+
+
+
+%-----------------------------------------------
+
+%The proposed method is based on the evaluation of the reciprocal condition number $\gamma(N)$ of the information matrix $P(N)$.
+%It was tested using the information matrix of the VRFT method, defined as $P(N) = \sum_{k=1}^N \varphi(k) \varphi\tran(k)$.
+%A more detailed explanation of the VRFT is given in the next subsection.
+%The proposed method is described in the sequence.
+%
+%First, calculate the reciprocal condition number of $P(k)$ as in \eqref{eq:proposed_approach}
+%\begin{equation}
+%	\gamma(N) = \frac{\underline{\sigma}(P(N))}{\overline{\sigma}(P(N))}
+%\label{eq:proposed_approach}
+%\end{equation}
+%where, $\underline{\sigma}(P(N))$ corresponds to the smallest singular value, $\overline{\sigma}(P(N))$ corresponds to the largest singular value of $P(N)$, and $N$ is the number of samples.
+%
+%Then, search for the curve that better fits to the curve of $\gamma(N)$, defined as $\hat{\gamma}(N)$.
+%
+%Finally, the goal is to find the index of the sample where the data deviates the most from the fitted curve towards bellow, that is,
+%\[
+%	w = \arg \min_w \gamma(N) - \hat{\gamma}(N)
+%\]
+%
+%It is important to notice, that one should ignore the first $n_\gamma$ samples before looking for the minimum.
+%Where, $n_\gamma$ is a design parameter that accounts for the initial low correlation between $\gamma(N)$ and the closed loop performance.
+%
+%Therefore, the subset of data to be used to estimate the parameters is defined by $w$.
+%As mentioned before, this method is still in its first steps and there is not yet a proper mathematical formulation for it.
+%As will be seen through the simulations experiments, using this approach gives controllers that are closest to the desired one, in other words, the obtained value for the cost function is smallest than using all data to estimate the controller's parameters.

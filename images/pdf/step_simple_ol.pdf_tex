@@ -1,0 +1,97 @@
+%% Creator: Inkscape inkscape 0.92.2, www.inkscape.org
+%% PDF/EPS/PS + LaTeX output extension by Johan Engelen, 2010
+%% Accompanies image file 'step_simple_ol.pdf' (pdf, eps, ps)
+%%
+%% To include the image in your LaTeX document, write
+%%   \input{<filename>.pdf_tex}
+%%  instead of
+%%   \includegraphics{<filename>.pdf}
+%% To scale the image, write
+%%   \def\svgwidth{<desired width>}
+%%   \input{<filename>.pdf_tex}
+%%  instead of
+%%   \includegraphics[width=<desired width>]{<filename>.pdf}
+%%
+%% Images with a different path to the parent latex file can
+%% be accessed with the `import' package (which may need to be
+%% installed) using
+%%   \usepackage{import}
+%% in the preamble, and then including the image with
+%%   \import{<path to file>}{<filename>.pdf_tex}
+%% Alternatively, one can specify
+%%   \graphicspath{{<path to file>/}}
+%% 
+%% For more information, please see info/svg-inkscape on CTAN:
+%%   http://tug.ctan.org/tex-archive/info/svg-inkscape
+%%
+\begingroup%
+  \makeatletter%
+  \providecommand\color[2][]{%
+    \errmessage{(Inkscape) Color is used for the text in Inkscape, but the package 'color.sty' is not loaded}%
+    \renewcommand\color[2][]{}%
+  }%
+  \providecommand\transparent[1]{%
+    \errmessage{(Inkscape) Transparency is used (non-zero) for the text in Inkscape, but the package 'transparent.sty' is not loaded}%
+    \renewcommand\transparent[1]{}%
+  }%
+  \providecommand\rotatebox[2]{#2}%
+  \ifx\svgwidth\undefined%
+    \setlength{\unitlength}{225bp}%
+    \ifx\svgscale\undefined%
+      \relax%
+    \else%
+      \setlength{\unitlength}{\unitlength * \real{\svgscale}}%
+    \fi%
+  \else%
+    \setlength{\unitlength}{\svgwidth}%
+  \fi%
+  \global\let\svgwidth\undefined%
+  \global\let\svgscale\undefined%
+  \makeatother%
+  \begin{picture}(1,0.7)%
+    \put(0,0){\includegraphics[width=\unitlength,page=1]{step_simple_ol.pdf}}%
+    \put(0.105,0.125){\makebox(0,0)[rb]{\smash{0}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=2]{step_simple_ol.pdf}}%
+    \put(0.105,0.19433333){\makebox(0,0)[rb]{\smash{0.2}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=3]{step_simple_ol.pdf}}%
+    \put(0.105,0.26366667){\makebox(0,0)[rb]{\smash{0.4}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=4]{step_simple_ol.pdf}}%
+    \put(0.105,0.333){\makebox(0,0)[rb]{\smash{0.6}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=5]{step_simple_ol.pdf}}%
+    \put(0.105,0.402){\makebox(0,0)[rb]{\smash{0.8}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=6]{step_simple_ol.pdf}}%
+    \put(0.105,0.47133333){\makebox(0,0)[rb]{\smash{1}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=7]{step_simple_ol.pdf}}%
+    \put(0.105,0.54066667){\makebox(0,0)[rb]{\smash{1.2}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=8]{step_simple_ol.pdf}}%
+    \put(0.105,0.61){\makebox(0,0)[rb]{\smash{1.4}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=9]{step_simple_ol.pdf}}%
+    \put(0.126,0.08){\makebox(0,0)[b]{\smash{0}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=10]{step_simple_ol.pdf}}%
+    \put(0.26466667,0.08){\makebox(0,0)[b]{\smash{20}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=11]{step_simple_ol.pdf}}%
+    \put(0.40333333,0.08){\makebox(0,0)[b]{\smash{40}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=12]{step_simple_ol.pdf}}%
+    \put(0.542,0.08){\makebox(0,0)[b]{\smash{60}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=13]{step_simple_ol.pdf}}%
+    \put(0.68033333,0.08){\makebox(0,0)[b]{\smash{80}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=14]{step_simple_ol.pdf}}%
+    \put(0.819,0.08){\makebox(0,0)[b]{\smash{100}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=15]{step_simple_ol.pdf}}%
+    \put(0.95766667,0.08){\makebox(0,0)[b]{\smash{120}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=16]{step_simple_ol.pdf}}%
+    \put(0.02766667,0.39466667){\rotatebox{90}{\makebox(0,0)[b]{\smash{Amplitude}}}}%
+    \put(0.54166667,0.035){\makebox(0,0)[b]{\smash{Sample, $t$}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=17]{step_simple_ol.pdf}}%
+    \put(0.85133333,0.16966667){\makebox(0,0)[rb]{\smash{All data}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=18]{step_simple_ol.pdf}}%
+    \put(0.85133333,0.21466667){\makebox(0,0)[rb]{\smash{Sing. Val.}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=19]{step_simple_ol.pdf}}%
+    \put(0.85133333,0.25966667){\makebox(0,0)[rb]{\smash{Cond}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=20]{step_simple_ol.pdf}}%
+    \put(0.85133333,0.30466667){\makebox(0,0)[rb]{\smash{Proposed}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=21]{step_simple_ol.pdf}}%
+    \put(0.85133333,0.34966667){\makebox(0,0)[rb]{\smash{Desired}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=22]{step_simple_ol.pdf}}%
+  \end{picture}%
+\endgroup%

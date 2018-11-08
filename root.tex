@@ -84,18 +84,12 @@ Therefore, the goal of this work is to apply the metrics already existent in the
 In the present work, the parameters were estimated using the virtual reference feedback tuning (VRFT) method.
 In order to attest the feasibility of the proposed solution some simulation case studies are also presented.
 
-%Evaluate the metrics in the literature and present the a novel metric.
-%Search for informative data subsets in the data set that would give a better estimate for the controller's parameter.
-%It uses the VRFT method to calculate the parameters.
-%Evaluate the results obtained using different amounts of data.
-%Several tests were performed and the results compared.
 
 \end{abstract}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{INTRODUCTION}
 
-% The aim of define the amount of data to be used in the parameters identification is an open issue.
 
 In general, within the data-driven control framework, the task of estimating the controller's parameters requires the execution of a specific experiment in a plant to collect data.
 This experiment requires a sufficient rich signal to be applied to the system, which, in most cases, differs from the signal that is applied to the system in normal operating mode.
@@ -106,9 +100,6 @@ Besides, as mentioned before, the required signal to better identify those param
 Therefore, an interesting option is to use data collected from normal operation instead.
 In industrial processes, data gathered from normal operation routines are usually stored in a data base, being already available for free.
 In some cases, these data may have relevant information that can be used to identify the parameters of a controller.
-
-%In some cases, this data may have relevant information that can be used to identify the parameters of a controller.
-%Since, usually, it is common in industrial process store gathered data from normal operation routines in a data base, this data is already available.
 
 The problem of searching for informative subsets within the entire data set has already been treated within the system identification framework.
 In \cite{carrette1996discarding} the authors proposed a data removal technique that is used to discard the data that are strongly dependent of the noise.
@@ -128,15 +119,11 @@ In order to minimize this effect, an approach based on the calculation of the en
 
 In \cite{shardt2013data} the authors used the condition number of the Fischer information matrix to determine, from the amount of data collected from normal operating routines, the sequences of data that are relevant to identify the system model.
 The same work also suggested a value for the threshold of the condition number.
-% Besides that, the authors presented a method to define an upper bound for the process model order that could be identified using the available data.
 
 In the work developed in \cite{arengas2017searching} a new method to search for informative data addressed to system identification was presented.
 In this work the reciprocal condition number is also used as a metric to determine the informative subset of data.
-% The method was inspired by the work presented in \cite{bittencourt2015algorithm}, and also uses the reciprocal condition number as a metric to determine the informative subset of data.
-% However, different metrics to search for transient changes in the input and output signals are used.
 In this case, only a few input changes are considered, and it was shown that the bias of the estimated parameters decreased using the selected subset.
 In \cite{arengas2017search} an extension of \cite{arengas2017searching} to the multiple-input multiple-output (MIMO) case is presented.
-%The results showed that the bias of the estimated parameters decreased using the data subset found by the algorithm, compared to using all the data available.
 
 In \cite{wang2018searching} a criterion to search for informative subsets in data gathered from normal operation routines is presented.
 This criterion is based on finding significant magnitude changes in the input and output signals.
@@ -144,7 +131,6 @@ This criterion is based on finding significant magnitude changes in the input an
 Searching for informative intervals of data is a task that has not received much attention in the data driven control framework.
 Besides that, it would be good to define some requirements, as for example, the amount of data to be collected and used in the parameters estimation.
 Moreover, it is interesting to know if the amount of data used for estimation of the parameters can interfere in the quality of the obtained estimation.
-% In other words, it would be good to know whether using more or less information to identify the controller's parameters could help to obtain a closed loop behaviour that better approaches the desired one.
 
 With all that in mind, the present work proposes the employment of the smallest singular value and the reciprocal condition number of the information matrix to the controller's parameters estimation problem.
 This was inspired by the works developed in \cite{carrette1996discarding} and \cite{bittencourt2015algorithm}, but these works addressed the system identification problem.
@@ -162,7 +148,6 @@ This way, it is suitable to be used with normal operation data.
 
 Therefore, the metrics mentioned above are used to delimit the informative amount of data to be used to identify the controller's parameters.
 Moreover, the value of the cost function is used as a measure to investigate the effect of reducing the number of samples on the estimation of the parameters.
-% In other words, this measure is used to assess if reducing the number of samples would lead to a smaller value for the cost function.
 Some simulation results are presented for different scenarios in order to demonstrate the feasibility of the proposed solution.
 
 This work is organized as follows: \autoref{sec:preliminaries} presents a briefly review of the methodologies proposed and presents the VRFT method.
@@ -170,97 +155,6 @@ In \autoref{sec:application} it is explained how the metrics are applied to the 
 The results of some simulation experiments are presented in \autoref{sec:experiments}.
 Finally, the conclusion and the future work are discussed in \autoref{sec:conclusions}.
 
-
-%\textcolor{blue}{
-%Suggestion: An advantage of using data driven methods instead of using system identification is that, in the case of using a PI or PID controller the regressor matrix is simplified.
-%Once, using the techniques to identify the system, that can have an elevated order, would make the regressor matrix bigger.
-%}
-
-%-----------------------------------------
-%
-%With all that in mind, the goal of this work is to apply part of the techniques developed in \cite{carrette1996discarding} and \cite{bittencourt2015algorithm} to the controller's parameters identification problem.
-%More specifically speaking, it was chosen to monitor the smallest singular value of the information matrix and the reciprocal condition number of the information matrix to define the amount of data to be used to calculate the controller's parameters.
-%
-%Besides that, inspired in the metrics presented above, a new metric is suggested, based also in the reciprocal condition number.
-%However, this new metric is still in the initial steps and needs a proper mathematical formulation.
-%The information matrix used in this case is given by the information matrix generated by the Virtual Reference Feedback Tuning (VRFT) method.
-%The VRFT is a non-iterative data-driven method, wich means that, in the ideal case, the data of a single experiment is enough to calculate the controller's parameters \cite{bazanella2011data}.
-%
-%\textcolor{blue}{Another point that this work proposes to investigate is the effect of reducing the number of samples in the estimation of the parameters.
-%To accomplish that, it was used the value of the cost function to validate the results obtained.}
-%Several simulation tests were developed and the results were compared.
-%
-%
-%\textcolor{blue}{This work is organized as follows section~\ref{sec:preliminaries} presents a briefly review of the methodologies proposed, and section~\ref{sec:simulation} the results of several simulation experiments are presented.
-%Finally, the conclusion and the future work are discussed in section~\ref{sec:conclusions}.}
-
-
-%In some cases, this data may have relevant information that can be used to identify the parameters of a controller.
-%In addition to it, usually, it is common in industrial process store gathered data from normal operation routines in a data base.
-%But, because of that, such data can not be as informative as desired to tune the controller's parameters, so searching for data sets that contains relevant information is a motivation to try to solve this issue.
-%
-%
-%Therefore, an interesting option is to use operational data collected from normal operation instead.
-%In some cases, this data may have relevant information that can be used to identify the parameters of a controller.
-%But, some requirements need to be defined, as for example, the amount of data to be collected and used in the parameters estimation.
-%Moreover, it is interesting to know if the amount of data used for estimation of the parameters can interfere in the quality of the obtained estimation.
-%In other words, it would be good to know whether if using more or less information to identify the controller's parameters could help to obtain a controller that better approaches the desired one.
-%
-%In addition to it, usually, it is common in industrial process store the gathered data in a data base.
-%But, because of that, such data can not be as informative as desired to tune the controller's parameters, so searching for data sets that contains relevant information is a motivation to try to solve this issue.
-
-%On the other hand, there are some works within the system identification framework that tackle the problems above.
-%In \cite{carrette1996discarding} the authors proposed a data removal technique that is used to discard the data that are only noise dependent.
-%The technique uses singular value decomposition (SVD) to extract the singular values of a regressor matrix, and the slope of the smallest singular value as a function of time is used as a metric to remove the data that does not have relevant information.
-%It was shown that using all the data may affect the quality of the obtained parameters estimation because it would increase the bias of the estimated parameters.
-%
-%In \cite{peretzki2011data} an algorithm was developed to find, in a historical data base, relevant intervals of data to system identification.
-%The algorithm searches for variations in the input and output signals, and uses also the condition number of the information matrix to determine if a sequence of data is interesting.
-%Besides, combined to the two metrics above mentioned, the algorithm verifies how correlated the input and output signals are, and uses it as a metric to determine the previously selected data sequence as useful and as a quality indicator for these sequence.
-%In \cite{bittencourt2015algorithm} an extension of the work presented in \cite{peretzki2011data} was showed, where a forgetting factor was added to the estimation of the Laguerre model and a noise model was introduced.
-%
-%Within the work presented in \cite{shardt2014segmentation} the algorithm proposed in \cite{peretzki2011data} was used to segment the data, aim to identify when the process model changed, and identify the different models for the plant corresponding to the segments founded.
-%Moreover, it was showed that this approach presents over-segmentation of the data set.
-%So, an approach based in the calculation of the entropy of the signals was suggested to minimize this effect.
-%
-%\textcolor{blue}{
-%Within the work presented in \cite{shardt2013data} the authors used the condition number of the Fischer information matrix to determine the sequences of data, from the amount of data collected from normal operating routines, that are relevant to identify the system model.
-%In this work, it was also suggested a value for the threshold of the condition number.
-%Besides that, the method was used to define an upper bound for the process model order that could be identified using the available data.}
-%
-%In \cite{arengas2017searching} a new method to search for informative data addressed to system identification was presented.
-%The method was inspired by the work presented in \cite{bittencourt2015algorithm}, and also uses the reciprocal condition number as a metric to determine the informative subset of data.
-%But, different metrics to search for transient changes in the input and output signals are used.
-%In these case, only few steps changes in the input signal are considered, and it was showed that using the selected subset decreased the bias of the estimated parameters.
-%
-%At the work presented in \cite{arengas2017search} the work in \cite{arengas2017searching} was extended to the multiple-input multiple-output (MIMO) case.
-%The results showed that the bias of the estimated parameters decreased using the data subset founded by the algorithm, compared to using all data available.
-
-
-
-
-%\textcolor{blue}{Artigos do michel e andre nao tratam o caso em que ha perturbacao, apenas consideram os casos em que ha excitacao em u(t) ou r(t)}
-
-%\textcolor{blue}{Problems using normal operating data: can have poor data quality}
-%
-%\textcolor{blue}{Problems using historical data: is often corrupted due to process disruptions, loss of information, and poor data quality. Motivation to search by segments of the data that could be used to system identification}
-
-
-% carrette1996discarding: aplicaram SVD no vetor regressor para extrair os valores singulares e utilizam o menor autovalor para extrair a informação relevante para a identificação do processo. Segundo os autores, o menor autovalor é o mais afetado pelo ruído pois sofre mais com bias e variância.
-% Desenvolveram a formulação matemática para demostrar isso.
-% Contudo é aplicado na identificação de sistemas e não na estimativa dos parâmetros do controlador.
-
-
-%Definir qual a quantidade de dados a ser utilizada na estimativa dos parâmetros é uma questão em aberto.
-%
-%Se a quantidade de dados utilizada pode influenciar na qualidade da estimativa obtida, também é uma questao pouco explorada até então.
-%
-%Geralmente, realizar um experimento especifico em uma planta nao é uma tarefa simples e em alguns casos pode ser inapropriada por vários motivos, entre eles: o sinal a ser empregado pode ser muito especifico e nao pode ser utilizado na planta, interromper a operaçao normal, etc.
-%Por isso utilizar os dados de operação é uma opção interessante.
-%Atualmente, vários trabalhos foram desenvolvidos com este objetivo em mente e técnicas para extrair informações importantes de dados de operação foram desenvolvidas.
-%Referencia ao artigo do Michel, Andre, etc.
-%
-%Este trabalho possui como objetivo investigar duas destas técnicas, propor uma técnica baseada nas técnicas existentes, e avaliar se a quantidade de dados utilizada na estimativa dos parâmetros pode influenciar na qualidade da estimativa obtida.
 
 \input{preliminaries}
 

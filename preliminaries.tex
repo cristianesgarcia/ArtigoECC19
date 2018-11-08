@@ -90,37 +90,6 @@ Because this test was not used in the current work, it is not presented here.
 An explanation of this step can be found in \cite{bittencourt2015algorithm}.
 If a data sequence is able to pass through all tests the subset is marked as useful.
 
-% \subsection{Proposed approach}
-%
-% The proposed approach was derived from graphical analysis of the reciprocal condition number $\gamma(t)$ and the cost function $J_y(N)$ defined in \eqref{eq:jy}.
-% % The information matrix used is from the VRFT method and the controller's parameters are estimated also using this method.
-% In a simple way, the method searches for a good number of samples $t_f$ to truncate the data
-% \begin{equation}
-% 	t_f = \arg \min_t \delta(t) \triangleq \gamma(t) - \hat{\gamma}(t)
-% \label{eq:proposed_method}
-% \end{equation}
-% where, $\hat{\gamma}(t)$ is a polynomial approximation of $\gamma(t)$.
-%
-% In other words, the goal is to find the index of the sample where the data deviates the most from the fitted curve towards bellow.
-% In general, the sample where the minimum of $\delta(t)$ occurs corresponds to a point in the valley around the minimum of $J_y(t)$.
-%
-% An illustrative example is shown in \autoref{fig:exp1}.
-% \begin{figure}[h!]
-%   \centering
-%   \def\svgwidth{\columnwidth}
-%   {\footnotesize\import{images/pdf/}{exp1.pdf_tex}}
-%   \caption{\label{fig:exp1} Correlation between $J_y(t)$ and $\delta(t)$.}
-% \end{figure}
-% The data came from 500 Monte Carlo simulations of a second order system operating in open loop.
-% A step was applied as input to the system and the output was affected by a colored noise.
-% The parameters were calculate while increasing the number of samples for each realization.
-% It is possible to see from \autoref{fig:exp1} that there is a positive correlation between $J_y(t)$ and $\delta(t)$, so reducing $\delta(t)$ also reduces $J_y(t)$.
-%
-%
-% It is important to notice that one should ignore the first $n_\gamma$ samples before looking for the minimum.
-% Here, $n_\gamma$ is a design parameter that accounts for the initial low correlation between $\gamma(t)$ and the closed loop performance.
-
-
 \subsection{\label{sub:vrft} VRFT method}
 The VRFT is a non-iterative data driven method, that is, in the ideal case the parameters can be estimated using the data collected from a single experiment.
 In the ideal case, the following considerations are made: the controller is linearly parametrized, the ideal controller belongs to the controller class, and the system is not affected by noise \cite{bazanella2011data}.
@@ -177,32 +146,3 @@ This estimation $\jy$ is defined as
 where, $N_e$ is the number of samples to calculate the cost function, $y_d(t)$ is the desired output, and $y(t, \hat{\rho}(N))$ is the obtained output with the controller gains $\hat{\rho}(N)$ estimated until the sample $N$, where $N$ is increased one sample at a time.
 
 
-
-
-%-----------------------------------------------
-
-%The proposed method is based on the evaluation of the reciprocal condition number $\gamma(N)$ of the information matrix $P(N)$.
-%It was tested using the information matrix of the VRFT method, defined as $P(N) = \sum_{k=1}^N \varphi(k) \varphi\tran(k)$.
-%A more detailed explanation of the VRFT is given in the next subsection.
-%The proposed method is described in the sequence.
-%
-%First, calculate the reciprocal condition number of $P(k)$ as in \eqref{eq:proposed_approach}
-%\begin{equation}
-%	\gamma(N) = \frac{\underline{\sigma}(P(N))}{\overline{\sigma}(P(N))}
-%\label{eq:proposed_approach}
-%\end{equation}
-%where, $\underline{\sigma}(P(N))$ corresponds to the smallest singular value, $\overline{\sigma}(P(N))$ corresponds to the largest singular value of $P(N)$, and $N$ is the number of samples.
-%
-%Then, search for the curve that better fits to the curve of $\gamma(N)$, defined as $\hat{\gamma}(N)$.
-%
-%Finally, the goal is to find the index of the sample where the data deviates the most from the fitted curve towards bellow, that is,
-%\[
-%	w = \arg \min_w \gamma(N) - \hat{\gamma}(N)
-%\]
-%
-%It is important to notice, that one should ignore the first $n_\gamma$ samples before looking for the minimum.
-%Where, $n_\gamma$ is a design parameter that accounts for the initial low correlation between $\gamma(N)$ and the closed loop performance.
-%
-%Therefore, the subset of data to be used to estimate the parameters is defined by $w$.
-%As mentioned before, this method is still in its first steps and there is not yet a proper mathematical formulation for it.
-%As will be seen through the simulations experiments, using this approach gives controllers that are closest to the desired one, in other words, the obtained value for the cost function is smallest than using all data to estimate the controller's parameters.

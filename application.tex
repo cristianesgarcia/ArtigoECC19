@@ -25,21 +25,6 @@ the smallest singular value method was applied to the regressor matrix $\Phi(t)$
 The informative subset is delimited while the inequality is not satisfied, this way, after the inequality be satisfied all remaining data is discarded.
 That means that the regressor vectors are not concatenated.
 
-
-% \begin{enumerate}
-%   \item The method is used to determine the informative data subset
-% 	\item The method is used to determinate the informative subset of data to be used in the estimation of the parameters.
-%   To accomplish that, the smallest singular value method was applied to the regressor matrix $\Phi(t)$ defined in \eqref{eq:reg_mat_vrft} formed by the VRFT regressor vectors defined in \eqref{eq:reg_vector_vrft} as
-%   \[
-%     \underline{\sigma}^2(\Phi(t)) - \underline{\sigma}^2(\Phi(t-1)) < \eta_c
-%   \]
-%   The informative subset is delimited while the inequality is not satisfied, this way, after the inequality be satisfied all remaining data is discarded.
-	% \item The threshold $\eta_c$ is obtained as $\eta_c = k \,\ \eta_{min}$
-	% where, $k$ is a constant term determined to give the better results and $\eta_{min}$ is the smallest slope of the graph of $\underline{\sigma}^2(N)$.
-% \end{enumerate}
-
-
-
 \subsection{Application of the condition number method to the addressed problem}
 In order to apply this method to the parameters estimation problem the condition number method was applied to the VRFT information matrix $P_N$ in \eqref{eq:inf_mat_vrft} as
 \[
@@ -50,7 +35,6 @@ The informative subset is defined while the inequality is satisfied, thus, the r
 \subsection{Another proposed approach}
 
 The proposed approach was derived from graphical analysis of the reciprocal condition number $\gamma(t)$ and the cost function $J_y(N)$ defined in \eqref{eq:jy}.
-% The information matrix used is from the VRFT method and the controller's parameters are estimated also using this method.
 In a simple way, the method searches for a good number of samples $t_f$ to truncate the data
 \begin{equation}
 	t_f = \arg \min_t \delta(t) \triangleq \gamma(t) - \hat{\gamma}(t)

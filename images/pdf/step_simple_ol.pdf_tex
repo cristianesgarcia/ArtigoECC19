@@ -68,30 +68,28 @@
     \put(0,0){\includegraphics[width=\unitlength,page=9]{step_simple_ol.pdf}}%
     \put(0.126,0.08){\makebox(0,0)[b]{\smash{0}}}%
     \put(0,0){\includegraphics[width=\unitlength,page=10]{step_simple_ol.pdf}}%
-    \put(0.26466667,0.08){\makebox(0,0)[b]{\smash{20}}}%
+    \put(0.29233333,0.08){\makebox(0,0)[b]{\smash{20}}}%
     \put(0,0){\includegraphics[width=\unitlength,page=11]{step_simple_ol.pdf}}%
-    \put(0.40333333,0.08){\makebox(0,0)[b]{\smash{40}}}%
+    \put(0.45866667,0.08){\makebox(0,0)[b]{\smash{40}}}%
     \put(0,0){\includegraphics[width=\unitlength,page=12]{step_simple_ol.pdf}}%
-    \put(0.542,0.08){\makebox(0,0)[b]{\smash{60}}}%
+    \put(0.625,0.08){\makebox(0,0)[b]{\smash{60}}}%
     \put(0,0){\includegraphics[width=\unitlength,page=13]{step_simple_ol.pdf}}%
-    \put(0.68033333,0.08){\makebox(0,0)[b]{\smash{80}}}%
+    \put(0.79133333,0.08){\makebox(0,0)[b]{\smash{80}}}%
     \put(0,0){\includegraphics[width=\unitlength,page=14]{step_simple_ol.pdf}}%
-    \put(0.819,0.08){\makebox(0,0)[b]{\smash{100}}}%
+    \put(0.95766667,0.08){\makebox(0,0)[b]{\smash{100}}}%
     \put(0,0){\includegraphics[width=\unitlength,page=15]{step_simple_ol.pdf}}%
-    \put(0.95766667,0.08){\makebox(0,0)[b]{\smash{120}}}%
-    \put(0,0){\includegraphics[width=\unitlength,page=16]{step_simple_ol.pdf}}%
     \put(0.02766667,0.39466667){\rotatebox{90}{\makebox(0,0)[b]{\smash{Amplitude}}}}%
     \put(0.54166667,0.035){\makebox(0,0)[b]{\smash{Sample, $t$}}}%
-    \put(0,0){\includegraphics[width=\unitlength,page=17]{step_simple_ol.pdf}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=16]{step_simple_ol.pdf}}%
     \put(0.85133333,0.16966667){\makebox(0,0)[rb]{\smash{All data}}}%
-    \put(0,0){\includegraphics[width=\unitlength,page=18]{step_simple_ol.pdf}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=17]{step_simple_ol.pdf}}%
     \put(0.85133333,0.21466667){\makebox(0,0)[rb]{\smash{Sing. Val.}}}%
-    \put(0,0){\includegraphics[width=\unitlength,page=19]{step_simple_ol.pdf}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=18]{step_simple_ol.pdf}}%
     \put(0.85133333,0.25966667){\makebox(0,0)[rb]{\smash{Cond}}}%
-    \put(0,0){\includegraphics[width=\unitlength,page=20]{step_simple_ol.pdf}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=19]{step_simple_ol.pdf}}%
     \put(0.85133333,0.30466667){\makebox(0,0)[rb]{\smash{Proposed}}}%
-    \put(0,0){\includegraphics[width=\unitlength,page=21]{step_simple_ol.pdf}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=20]{step_simple_ol.pdf}}%
     \put(0.85133333,0.34966667){\makebox(0,0)[rb]{\smash{Desired}}}%
-    \put(0,0){\includegraphics[width=\unitlength,page=22]{step_simple_ol.pdf}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=21]{step_simple_ol.pdf}}%
   \end{picture}%
 \endgroup%

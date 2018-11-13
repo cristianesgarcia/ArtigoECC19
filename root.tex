@@ -59,7 +59,7 @@ Extraction of informative data subsets for use \\ in data-driven control
 
 
 \author{Cristiane Silva Garcia$^{1}$ and Alexandre Sanfelice Bazanella$^{1}$% <-this % stops a space
-\thanks{$^{1}$The authors are with the department of Automation and Energy -- Federal University of Rio Grande do Sul. Av. Osvaldo Aranha 103 -- CEP:90035-190 -- Porto Alegre, RS -- Brazil
+\thanks{$^{1}$The authors are with the department of Automation and Energy -- Federal University of Rio Grande do Sul. Av. Osvaldo Aranha 99 -- CEP:90035-190 -- Porto Alegre, RS -- Brazil
         {\tt\small \{cristiane.garcia, bazanella\}@ufrgs.br}}%
 \thanks{This study was financed in part by the Coordena\c{c}\~{a}o de Aperfei\c{c}oamento de Pessoal de N\'{i}vel Superior - Brasil (CAPES) - Finance Code 001.}
 }
@@ -77,12 +77,9 @@ Extraction of informative data subsets for use \\ in data-driven control
 \begin{abstract}
 
 
-Performing a specific experiment to collect data to estimate the controller's parameters can be a difficult and, sometimes, an undesired task.
-Instead of that, an attractive idea is to use data gathered from normal operation routines.
-In some cases these data may have enough information to estimate these parameters.
-Therefore, the goal of this work is to apply the metrics already existent in the system identification literature to the controller's estimation problem and to propose a new metric, to search for informative subsets of data from the entire collected data set.
-In the present work, the parameters were estimated using the virtual reference feedback tuning (VRFT) method.
-In order to attest the feasibility of the proposed solution some simulation case studies are also presented.
+Performing a specific experiment to collect data to tune a controller's parameters can be a very costly and sometimes undesired task.
+Instead, an attractive idea is to use data gathered from normal operation routines. In many cases these data may have enough information to estimate the optimal controller parameters, and it is important to determine for which subsets of data this is the case.
+This problem has been studied in the system identification framework, where metrics have been proposed to search for informative subsets of data from a given set of routine operating data. The goal of the present work is to apply to the controller's estimation problem these metrics already proposed in the system identification literature, and also to propose a new metric. In order to attest the feasibility of the proposed solutions and compare their performance, case studies are also presented.
 
 
 \end{abstract}
@@ -91,25 +88,22 @@ In order to attest the feasibility of the proposed solution some simulation case
 \section{INTRODUCTION}
 
 
-In general, within the optimal data-driven control framework, the task of estimating the controller's parameters requires the execution of a specific experiment in a plant to collect data.
+In general, within the optimal data-driven control framework, the task of estimating the controller's parameters requires the execution of a specific experiment in a plant to collect informative data.
 This experiment requires a sufficient rich signal to be applied to the system, which, in most cases, differs from the signal that is applied to the system in normal operating mode.
-In several cases, this is a very costly task and, sometimes, may be even impossible because of some reasons.
-For example, interrupting the normal operation to perform the specific experiment can be a costly task.
+In several cases, this is a very costly task and, sometimes, may be even impossible.
 % Besides, as mentioned before, the required signal to better identify those parameters can be very different from the signal used in normal operation, as for example a pseudorandom binary sequence (PRBS), and because of that, it is inconvenient to apply it to the system.
 
-Therefore, a better option is to use data collected from normal operation instead.
-In industrial processes, data gathered from normal operation routines are usually stored in a data base, being already available for free.
-Often, these data provide relevant information that can be used to identify the parameters of a controller.
+Therefore, a better option is to use data collected from normal operation instead. In industrial processes, data gathered from normal operation routines are usually stored in a data base, being already available for free. Often, these data provide relevant information that can be used to identify the parameters of a controller. However this is not always the case, and the use of noninformative data may result in inappropriate tuning.
 
 The problem of searching for informative subsets within the entire data set has already been treated within the system identification framework.
-In \cite{carrette1996discarding} the authors proposed a data removal technique that is used to discard the data that are strongly dependent of the noise.
+Informativity is determined by the regularity of the Fischer information matrix (FIM) and depends mostly on the spectrum and magnitude of the external signals applied to the plant; a detailed theoretical treatment is given in \cite{bazanella2009}. The amount of information about the plant contained in a data set can be evaluated by the eigenvalues of the FIM.  In \cite{carrette1996discarding} the authors proposed a data removal technique that is used to discard the data that are strongly dependent of the noise.
 The technique uses singular value decomposition (SVD) to extract the singular values of a regressor matrix.
 Then the slope of the smallest singular value as a function of time is used as a metric to remove the data that does not have relevant information.
 It was shown that using all the data may worsen the quality of the obtained parameters estimation because it would increase the bias of the estimated parameters.
 % In the simulations results, the total mean square error (MSE) was used to evaluate the quality of the estimated parameters.
 
 In \cite{peretzki2011data} an algorithm was developed to find relevant intervals of data to system identification within a historical data base.
-The algorithm searches for variations on the input and output signals, and also uses the condition number of the information matrix to determine if a sequence of data is informative enough.
+The algorithm searches for variations on the input and output signals, and uses the condition number of the information matrix to determine if a sequence of data is informative enough.
 Besides, combined to the two metrics mentioned above, the algorithm verifies how much the input and output signals are correlated, and uses it as a metric to define the previously selected data sequence as useful, and also as a quality indicator for this sequence.
 An extension of the work in \cite{peretzki2011data} was presented in \cite{bittencourt2015algorithm}, where a forgetting factor was added to the estimation of the Laguerre model and a noise model was introduced.
 
@@ -127,27 +121,25 @@ This criterion is based on finding significant magnitude changes in the input an
 In the work developed in \cite{bitmead2017subspace} a rank test was presented to delimit the informative data subset.
 In that case, the system is identified using subspace system identification.
 
-Searching for informative intervals of data is a task that has not received much attention in the data driven control framework.
-Besides that, it would be good to define some requirements, as for example, the amount of data to be collected and used in the parameters estimation.
-Moreover, it is useful to know if the amount of data used for estimation of the parameters can interfere in the quality of the obtained estimation.
-
-With all that in mind, the present work proposes the employment of the smallest singular value and the reciprocal condition number of the information matrix to the controller's parameters estimation problem.
+In the data driven control framework this search for informative intervals of data is a issue that has not received much attention.
+%Besides that, it would be good to define some requirements, as for example, the amount of data to be collected and used in the parameters estimation.Moreover, it is useful to know if the amount of data used for estimation of the parameters can interfere in the quality of the obtained estimation. 
+With that in mind, the present work explores the employment of the smallest singular value and the reciprocal condition number of the information matrix to the controller's parameters estimation problem.
 This was inspired by the works developed in \cite{carrette1996discarding} and \cite{bittencourt2015algorithm}, which addressed the system identification problem.
 Besides that, a new metric is suggested in this work, based also in the reciprocal condition number.
 % However, this new metric is still in the first steps, and a proper mathematical formulation needs to be developed.
 
-An advantage of using the data-driven approach, as the name suggests, is that the controller is estimated directly from the data.
-Thus, in the case of using a simple controller class as proportional-integral (PI) or a proportional-integral-derivative (PID) reduces the complexity of the information matrix compared to the system identification approach where, in general, a high order process is modeled.
+%ESTA PARTE FICOU MEIO DESLOCADA, MAS VAMOS USA-LA NA VERSAO FINAL. An advantage of using the data-driven approach, as the name suggests, is that the controller is estimated directly from the data.
+%Thus, in the case of using a simple controller class as proportional-integral (PI) or a proportional-integral-derivative (PID) reduces the complexity of the information matrix compared to the system identification approach where, in general, a high order process is modeled.
 
 
 
-In this paper, the parameters are calculated using the Virtual Reference Feedback Tuning (VRFT) method, so the information matrix and the regressor vector used are generated by this method.
-The VRFT is a non-iterative data-driven method, which means that, in the ideal case, the data of a single experiment is enough to calculate the controller's parameters \cite{bazanella2011data}.
-This way, it is suitable to be used with normal operation data.
+%In this paper, the parameters are calculated using the Virtual Reference Feedback Tuning (VRFT) method, so the information matrix and the regressor vector used are generated by this method.
+%The VRFT is a non-iterative data-driven method, which means that, in the ideal case, the data of a single experiment is enough to calculate the controller's parameters \cite{bazanella2011data}.
+%This way, it is suitable to be used with normal operation data.
 
-Therefore, the metrics mentioned above are used to delimit the informative amount of data to be used to identify the controller's parameters.
-Moreover, the value of the cost function is used as a measure to investigate the effect of reducing the number of samples on the estimation of the parameters.
-Some simulation results are presented for different scenarios in order to demonstrate the feasibility of the proposed solution.
+These metrics  are used to delimit the informative amount of data to be used to identify the controller's parameters.
+Moreover, the cost function that measures closed-loop performance is used as a measure to investigate the effect of reducing the number of samples on the estimation of the parameters.
+Simulation results are presented for different case studies in different scenarios in order to demonstrate the feasibility of the proposed solutions.
 
 This paper is organized as follows: \autoref{sec:preliminaries} presents a briefly review of the methodologies proposed and presents the VRFT method.
 In \autoref{sec:application} it is explained how the metrics are applied to the addressed problem.
@@ -163,13 +155,13 @@ Finally, the conclusion and the future work are discussed in \autoref{sec:conclu
 
 \section{\label{sec:conclusions} CONCLUSIONS}
 
-In this work, some methods existent in the literature aiming at finding informative subsets from data gathered from normal operation routines, originally applied to the system identification framework, were applied to the controller's estimation problem.
+In this work, some methods existent in the literature aiming at finding informative subsets from data gathered from normal operation routines, originally adapted to the system identification framework, were applied to the controller's estimation problem.
 The methods applied are based on the smallest singular value criterion and the reciprocal condition number criterion.
 Moreover, a new criterion based on the reciprocal condition number was presented and applied to the same problem.
-Some simulation examples are also presented whose results indicate that using these criteria may improve the parameters estimation.
+Simulation examples were also presented whose results indicate that using these criteria may improve the parameters estimation with respect to the use of the whole batch of routine data.
 
-There are still some open issues as the development of a stronger mathematical proof of the applicability of the literature criteria to the controller's estimation problem.
-Also the development of a better mathematical formulation for the proposed criterion, and to extend these criteria to the multivariable case.
+%There are still open issues as the development of a stronger mathematical proof of the applicability of the literature criteria to the controller's estimation problem.
+%Also the development of a better mathematical formulation for the proposed criterion, and to extend these criteria to the multivariable case.
 
 
 \addtolength{\textheight}{-12cm}   % This command serves to balance the column lengths

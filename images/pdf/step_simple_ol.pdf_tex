@@ -85,7 +85,7 @@
     \put(0,0){\includegraphics[width=\unitlength,page=17]{step_simple_ol.pdf}}%
     \put(0.85133333,0.21466667){\makebox(0,0)[rb]{\smash{Sing. Val.}}}%
     \put(0,0){\includegraphics[width=\unitlength,page=18]{step_simple_ol.pdf}}%
-    \put(0.85133333,0.25966667){\makebox(0,0)[rb]{\smash{Cond}}}%
+    \put(0.85133333,0.25966667){\makebox(0,0)[rb]{\smash{Cond.}}}%
     \put(0,0){\includegraphics[width=\unitlength,page=19]{step_simple_ol.pdf}}%
     \put(0.85133333,0.30466667){\makebox(0,0)[rb]{\smash{Proposed}}}%
     \put(0,0){\includegraphics[width=\unitlength,page=20]{step_simple_ol.pdf}}%

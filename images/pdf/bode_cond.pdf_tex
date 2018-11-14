@@ -72,7 +72,7 @@
     \put(0,0){\includegraphics[width=\unitlength,page=11]{bode_cond.pdf}}%
     \put(0.04266667,0.55266667){\rotatebox{90}{\makebox(0,0)[b]{\smash{Magnitude (dB)}}}}%
     \put(0,0){\includegraphics[width=\unitlength,page=12]{bode_cond.pdf}}%
-    \put(0.246,0.46166667){\makebox(0,0)[rb]{\smash{Cond}}}%
+    \put(0.246,0.46166667){\makebox(0,0)[rb]{\smash{Cond.}}}%
     \put(0,0){\includegraphics[width=\unitlength,page=13]{bode_cond.pdf}}%
     \put(0.246,0.50666667){\makebox(0,0)[rb]{\smash{Desired}}}%
     \put(0,0){\includegraphics[width=\unitlength,page=14]{bode_cond.pdf}}%
@@ -95,7 +95,7 @@
     \put(0.04266667,0.24466667){\rotatebox{90}{\makebox(0,0)[b]{\smash{Phase ($\degree$)}}}}%
     \put(0.55966667,0.019){\makebox(0,0)[b]{\smash{Frequency (rad/sample)}}}%
     \put(0,0){\includegraphics[width=\unitlength,page=23]{bode_cond.pdf}}%
-    \put(0.246,0.27066667){\makebox(0,0)[rb]{\smash{Cond}}}%
+    \put(0.246,0.27066667){\makebox(0,0)[rb]{\smash{Cond.}}}%
     \put(0,0){\includegraphics[width=\unitlength,page=24]{bode_cond.pdf}}%
     \put(0.246,0.31566667){\makebox(0,0)[rb]{\smash{Desired}}}%
     \put(0,0){\includegraphics[width=\unitlength,page=25]{bode_cond.pdf}}%

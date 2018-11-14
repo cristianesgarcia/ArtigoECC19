@@ -96,7 +96,7 @@ In several cases, this is a very costly task and, sometimes, may be even impossi
 Therefore, a better option is to use data collected from normal operation instead. In industrial processes, data gathered from normal operation routines are usually stored in a data base, being already available for free. Often, these data provide relevant information that can be used to identify the parameters of a controller. However this is not always the case, and the use of noninformative data may result in inappropriate tuning.
 
 The problem of searching for informative subsets within the entire data set has already been treated within the system identification framework.
-Informativity is determined by the regularity of the Fischer information matrix (FIM) and depends mostly on the spectrum and magnitude of the external signals applied to the plant; a detailed theoretical treatment is given in \cite{bazanella2009}. The amount of information about the plant contained in a data set can be evaluated by the eigenvalues of the FIM.  In \cite{carrette1996discarding} the authors proposed a data removal technique that is used to discard the data that are strongly dependent of the noise.
+Informativity is determined by the regularity of the Fischer information matrix (FIM) and depends mostly on the spectrum and magnitude of the external signals applied to the plant; a detailed theoretical treatment is given in \cite{gevers2009identification}. The amount of information about the plant contained in a data set can be evaluated by the eigenvalues of the FIM.  In \cite{carrette1996discarding} the authors proposed a data removal technique that is used to discard the data that are strongly dependent of the noise.
 The technique uses singular value decomposition (SVD) to extract the singular values of a regressor matrix.
 Then the slope of the smallest singular value as a function of time is used as a metric to remove the data that does not have relevant information.
 It was shown that using all the data may worsen the quality of the obtained parameters estimation because it would increase the bias of the estimated parameters.
@@ -122,7 +122,7 @@ In the work developed in \cite{bitmead2017subspace} a rank test was presented to
 In that case, the system is identified using subspace system identification.
 
 In the data driven control framework this search for informative intervals of data is a issue that has not received much attention.
-%Besides that, it would be good to define some requirements, as for example, the amount of data to be collected and used in the parameters estimation.Moreover, it is useful to know if the amount of data used for estimation of the parameters can interfere in the quality of the obtained estimation. 
+%Besides that, it would be good to define some requirements, as for example, the amount of data to be collected and used in the parameters estimation.Moreover, it is useful to know if the amount of data used for estimation of the parameters can interfere in the quality of the obtained estimation.
 With that in mind, the present work explores the employment of the smallest singular value and the reciprocal condition number of the information matrix to the controller's parameters estimation problem.
 This was inspired by the works developed in \cite{carrette1996discarding} and \cite{bittencourt2015algorithm}, which addressed the system identification problem.
 Besides that, a new metric is suggested in this work, based also in the reciprocal condition number.

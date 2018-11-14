@@ -80,7 +80,7 @@
     \put(0,0){\includegraphics[width=\unitlength,page=15]{polarization_simple_ol.pdf}}%
     \put(0.91433333,0.632){\makebox(0,0)[rb]{\smash{Proposed}}}%
     \put(0,0){\includegraphics[width=\unitlength,page=16]{polarization_simple_ol.pdf}}%
-    \put(0.91433333,0.587){\makebox(0,0)[rb]{\smash{Cond}}}%
+    \put(0.91433333,0.587){\makebox(0,0)[rb]{\smash{Cond.}}}%
     \put(0,0){\includegraphics[width=\unitlength,page=17]{polarization_simple_ol.pdf}}%
     \put(0.91433333,0.542){\makebox(0,0)[rb]{\smash{Sing. Val.}}}%
     \put(0,0){\includegraphics[width=\unitlength,page=18]{polarization_simple_ol.pdf}}%

@@ -41,7 +41,7 @@ The values used for the thresholds are: $\eta_c = 60\eta_{min} $ for the smalles
 The confidence interval of the criteria is presented in \autoref{fig:conf_exp1}.
 As can be seen, regardless of the criterion used the parameters estimated are biased.
 This occurs because the simplest approach of the VRFT method is applied and the signals are affected by noise.
-Moreover, it is possible to observe that the bias of the parameters obtained applying the condition number criterion and the proposed criterion is almost equal, while the variance obtained with the proposed criterion is bigger then the variance obtained with the condition number criterion.
+Moreover, it is possible to observe that the bias of the parameters obtained applying the condition number criterion and the proposed criterion is almost equal, while the variance obtained with the proposed criterion is bigger then the variance obtained with the reciprocal condition number criterion.
 In contrast, the smallest singular value criterion shows the highest values for bias and variance.
 \begin{figure}[h!]
   \centering
@@ -78,13 +78,13 @@ The obtained values are: 0.00289 for the proposed criterion, 0.00355 for the con
 
 
 The closed loop responses, obtained with one realization randomly chosen for each method, are presented in \autoref{fig:step_simple_ol}.
-It is possible to see that the obtained responses are close to the desired one, different from the obtained response when the entire data set is used to estimate the parameters.
 \begin{figure}[h!]
   \centering
   \def\svgwidth{\columnwidth}
   {\footnotesize\import{images/pdf/}{step_simple_ol.pdf_tex}}
   \caption{\label{fig:step_simple_ol} Closed loop step responses for each criterion.}
 \end{figure}
+It is possible to see that the obtained responses are close to the desired one, different from the obtained response when the entire data set is used to estimate the parameters.
 
 
 \subsection{Closed loop case}
@@ -98,7 +98,7 @@ In this case, a step sequence was used as input reference $r(t)$, and 500 Monte 
 Here, also for each realization, the parameters were estimated using the VRFT method with the number of samples increasing one sample each time.
 The values used for the thresholds are: $\eta_c = 80\eta_{min} $ for the smallest singular value criterion, $\eta_n = 0.02$ for the reciprocal condition number criterion, and $\eta_\gamma = 35$ as initial start for the proposed criterion.
 The confidence interval of the methods is presented in \autoref{fig:polarization_cl_deg_r}.
-As can be seen, the bias obtained with the proposed criterion and the condition number criterion is almost equal.
+As can be seen, the bias obtained with the proposed criterion and the reciprocal condition number criterion is almost equal.
 In this case, applying the smallest singular value we also obtained the highest values of the bias and variance for the estimated parameters.
 \begin{figure}[h!]
   \centering
@@ -114,16 +114,16 @@ In this case, the proposed criterion shows the best result.
 \centering
 \begin{tabular}{lc}
 \toprule
-Method & Below $q$\\
+Criterion & Below $q$\\
 \midrule
-Proposed method & 358 (71.6\%) \\
+Proposed & 358 (71.6\%) \\
 Reciprocal condition number & 139 (27.8\%) \\
 Smallest singular value & 104 (20.8\%) \\
 \bottomrule
 \end{tabular}
 \end{table}
 
-The MSE was also calculated, for each criterion, as in \eqref{eq:mse} and the obtained values are: 0.00640 for the proposed criterion, 0.00681 for the condition number criterion, and 0.02295 for the smallest singular value criterion.
+The MSE was also calculated, for each criterion, as in \eqref{eq:mse} and the obtained values are: 0.00640 for the proposed criterion, 0.00681 for the proposed condition number criterion, and 0.02295 for the smallest singular value criterion.
 
 The cost function was calculated for four randomly selected realizations and is presented in \autoref{fig:jy_cl_deg_r}.
 Each cost function was calculated with increasing number of samples and the dots indicate the ending of the intervals returned by each criterion.
@@ -163,9 +163,9 @@ That can also be seen through the Bode diagrams in figures \ref{fig:bode_prop}, 
 \centering
 \begin{tabular}{lc}
 \toprule
-Method & Below $q$\\
+Criterion & Below $q$\\
 \midrule
-Proposed method & 104 (20.8\%) \\
+Proposed & 104 (20.8\%) \\
 Reciprocal condition number & 85 (17\%) \\
 Smallest singular value & 84 (16.8\%) \\
 \bottomrule
@@ -186,7 +186,7 @@ In this case, the MSE was also calculated, for each criterion, as in \eqref{eq:m
   \centering
   \def\svgwidth{\columnwidth}
   {\footnotesize\import{images/pdf/}{bode_cond.pdf_tex}}
-  \caption{\label{fig:bode_cond} Bode diagram of the controllers found in the Monte Carlo simulations using the condition number criterion.}
+  \caption{\label{fig:bode_cond} Bode diagram of the controllers found in the Monte Carlo simulations using the reciprocal condition number criterion.}
 \end{figure}
 
 \begin{figure}[h!]
